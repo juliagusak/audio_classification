@@ -1,6 +1,10 @@
 import numpy as np
 import random
 
+INPUT_LENGTH = 40000
+FACTOR = 32768.0
+
+
 # Default data augmentation
 def padding(pad):
     def f(sound):
@@ -46,9 +50,29 @@ def random_scale(max_scale, interpolate='Linear'):
 
     return f
 
+
+# Make audio louder / quieter
 # For augmentation use db=6
 def random_gain(db):
     def f(sound):
         return sound * np.power(10, random.uniform(-db, db) / 20.0)
 
     return f
+
+
+def preprocess_sound(sound):
+    sound = padding(INPUT_LENGTH//2)(sound)
+    sound = random_crop(INPUT_LENGTH)(sound)
+    sound = normalize(FACTOR)(sound)
+    
+    return sound.astype(np.float32)
+
+
+def augment_sound(sound, strong = True):
+    sound = random_scale(1.25)(sound)
+    sound = preprocess_sound(sound)
+    
+    if strong:
+        sound = random_gain(6)(sound)
+        
+    return sound.astype(np.float32)
