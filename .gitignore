@@ -1,0 +1,17 @@
+.DS_Store
+*.pyc
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+*/bc_learning_sound/_core/*
+*/bc_learning_sound/core/*
+*.bin
+*.pkl
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+### PyCharm ###
+\.idea/
+
