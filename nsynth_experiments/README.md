@@ -61,3 +61,12 @@ python nsynth_save_embeddings.py
 ```
 python nsynth_generate.py
 ```
+
+# Dataset preprocessing
+
+## Data augmentation
+If initial dataset doesn't contain enough samples to train, we augment data by adding addtive/multiplicative/both(additive and multiplicative) noise to audio signals. We assumе that the noise has one of the following distributions: Gaussian, Laplasian or Gaussian mixture. For more details see `augment.py`file.
+
+## Creating TFRecords
+For each data we create training and validation datasets in .tfrecord format (see, for example, `librispeech_to_tfrecords.py`, `esc_to_tfrecords.py` files).
+
