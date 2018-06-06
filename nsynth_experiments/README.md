@@ -44,6 +44,11 @@ To train the models you need
  
  ```python  nsynth_finetuned_autoencoder.py```
  
+ 
+ # Evaluation
+ 
+ To run evaluation procedure of finetuned models, please follow the instructions in `nsynth_evaluate.ipynb` file.
+ 
  # Exploring embeddings (saving ang generating)
  To run experiments from this section you need Magenta package to be installed
  ([installation guide](https://github.com/tensorflow/magenta)).
