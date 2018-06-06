@@ -27,8 +27,7 @@ and decided to use it in audio classification tasks (speaker identification, env
 # Training
 To train the models you need 
   * #### Dataset containing raw audio 
-  
-  We train our models on [LibriSpeech corpus](http://www.openslr.org/12/) for speaker identification task.
+  We train our models on [LibriSpeech corpus](http://www.openslr.org/12/) for speaker identification task. Find  more details in **Dataset preprocessing** section.
   
   * #### Weights of Nsynth model pretrained 
   
